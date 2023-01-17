@@ -32,6 +32,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
 
     background-color: royalblue;
     min-width: 200px;
@@ -84,4 +85,6 @@ body {
 .button {
     background-color: aqua;
     margin: 10px;
+    height: 80px;
+    width: 80px;
 }
