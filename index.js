@@ -12,7 +12,7 @@ app.use(
 // ---- FUNCTIONS ----
 
 app.get('/', function (req, res) {
-    res.send('OLA CATINDER <3')
+    res.send(index.html)
   })
 
 
