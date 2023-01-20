@@ -1,7 +1,7 @@
 var express = require("express");
 
 const app = express();
-const port = 3000;
+const port = 3030;
 
 app.use(
   express.urlencoded({
@@ -11,8 +11,6 @@ app.use(
 
 // ---- FUNCTIONS ----
 
-app.get('/', function (req, res) {
-    res.send(index.html)
-  })
+app.use("/catinder", express.static("websfiles"));
 
 
