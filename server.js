@@ -12,30 +12,32 @@ app.use(
 // ---- FUNCTIONS ----
 
 function contarChamadas(obj){
-
+  obj["chamadas"] += 1;
+  console.log(`O valor de chamadas é = ${obj.chamadas}`)
 }
 
 // --- URL'SES ---
 
 app.use("/catinder", express.static("websfiles"));
 
+var likes = {
+  chamadas: 0,
+};
+var passes = {
+  chamadas: 0,
+};
+
 app.post("/like", async (req, res) => {
-  var likes = {
-    chamadas: 0,
-  };
   console.log(`Tentei pegar os valores de ${likes}`);
 
-  var contaNova = await contarChamadas(likes);
+  var chamadas = await contarChamadas(likes);
   res.send("added");
 });
 
 app.post("/pass", async (req, res) => {
-  var passes = {
-    chamadas: 0,
-  };
   console.log(`Tentei pegar os valores de ${passes}`);
 
-  var contaNova = await contarChamadas(passes);
+  var chamadas = await contarChamadas(passes);
   res.send("added");
 });
 
