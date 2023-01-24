@@ -11,9 +11,33 @@ app.use(
 
 // ---- FUNCTIONS ----
 
+function contarChamadas(obj){
+
+}
+
+// --- URL'SES ---
+
 app.use("/catinder", express.static("websfiles"));
 
+app.post("/like", async (req, res) => {
+  var likes = {
+    chamadas: 0,
+  };
+  console.log(`Tentei pegar os valores de ${likes}`);
 
+  var contaNova = await contarChamadas(likes);
+  res.send("added");
+});
+
+app.post("/pass", async (req, res) => {
+  var passes = {
+    chamadas: 0,
+  };
+  console.log(`Tentei pegar os valores de ${passes}`);
+
+  var contaNova = await contarChamadas(passes);
+  res.send("added");
+});
 
 // --- THE END ;) ---
 
