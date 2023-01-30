@@ -1,3 +1,9 @@
+const userPicture = document.getElementById("user_picture");
+var img = document.createElement("img");
+img.src = "./blep.jpg";
+
+userPicture.appendChild(img);
+
 async function like() {
     console.log("Eu gosto desse gatinho");
 
