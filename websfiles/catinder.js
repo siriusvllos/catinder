@@ -1,6 +1,6 @@
 const userPicture = document.getElementById("user_picture");
 var img = document.createElement("img");
-img.src = "./blep.jpg";
+
 
 userPicture.appendChild(img);
 
@@ -24,4 +24,9 @@ async function pass() {
     const data = await response.json();
     
     console.log(data);
+}
+
+function mudarFoto() {
+    console.log("Estamos escolhendo outro gatinho");
+    img.src = "/blep.jpg";
 }
