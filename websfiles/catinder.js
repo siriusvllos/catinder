@@ -1,8 +1,4 @@
-const userPicture = document.getElementById("user_picture");
 var img = document.createElement("img");
-
-
-userPicture.appendChild(img);
 
 async function like() {
     console.log("Eu gosto desse gatinho");
@@ -28,5 +24,11 @@ async function pass() {
 
 function mudarFoto() {
     console.log("Estamos escolhendo outro gatinho");
-    img.src = "/blep.jpg";
+    img.src = "blep.jpg";
+}
+
+function init() {
+    const userPicture = document.getElementById("user_picture");
+    userPicture.appendChild(img);
+    console.log("O init foi iniciado");
 }
