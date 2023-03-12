@@ -52,7 +52,7 @@ async function listarUsuarios() {
 
   try {
     await client.connect();
-    const database = client.db("vendas");
+    const database = client.db("catinder");
     const usuarios = database.collection("usuarios");
  
     const query = {};
@@ -99,9 +99,9 @@ app.post("/users", async (req, res) => {
     email: "",
     picture: ""
   };
-  novoUsuario.login = req.param("nome de usuário");
+  novoUsuario.login = req.param("login");
   novoUsuario.email = req.param("email");
-  novoUsuario.picture = req.param("foto de perfil");
+  novoUsuario.picture = req.param("picture");
 
   console.log(`Tentei pegar os valores de ${novoUsuario}`);
 
@@ -133,5 +133,3 @@ app.get("/users", async (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-
-// branch:)
