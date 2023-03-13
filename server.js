@@ -52,7 +52,7 @@ async function listarUsuarios() {
 
   try {
     await client.connect();
-    const database = client.db("vendas");
+    const database = client.db("catinder");
     const usuarios = database.collection("usuarios");
  
     const query = {};
@@ -68,7 +68,7 @@ async function listarUsuarios() {
  
   try {
     await client.connect();
-    const database = client.db("vendas");
+    const database = client.db("catinder");
     const usuarios = database.collection("usuarios");
  
     await usuarios.insertOne(novoUsuario);
@@ -77,15 +77,15 @@ async function listarUsuarios() {
   }
  };
  
- async function deletarUsuario(nome) {
+ async function deletarUsuario(login) {
   const client = new MongoClient(uri);
  
   try {
     await client.connect();
-    const database = client.db("vendas");
+    const database = client.db("catinder");
     const usuarios = database.collection("usuarios");
 
-    await usuarios.remove({ nome: nome });
+    await usuarios.remove({ login: login });
   } finally {
     await client.close();
   }
@@ -99,9 +99,9 @@ app.post("/users", async (req, res) => {
     email: "",
     picture: ""
   };
-  novoUsuario.login = req.param("nome de usuário");
+  novoUsuario.login = req.param("login");
   novoUsuario.email = req.param("email");
-  novoUsuario.picture = req.param("foto de perfil");
+  novoUsuario.picture = req.param("picture");
 
   console.log(`Tentei pegar os valores de ${novoUsuario}`);
 
@@ -110,13 +110,12 @@ app.post("/users", async (req, res) => {
 });
 
 app.delete("/users", async (req, res) => {
-  var login = req.param("nome");
+  var login = req.param("login");
 
   console.log(login);
-  console.log(email);
 
  if (login != undefined) {
-    var adeusUsuario = await deletarUsuario(nome);
+    var adeusUsuario = await deletarUsuario(login);
     res.send("deleted");
   } else if (login == undefined) {
     res.send("ERRO: não conseguimos encontrar a sua conta");
