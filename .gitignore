@@ -1,0 +1,15 @@
+  node_modules/bl/
+        node_modules/bson/
+        node_modules/core-util-is/
+        node_modules/denque/
+        node_modules/isarray/
+        node_modules/memory-pager/
+        node_modules/mongodb/
+        node_modules/optional-require/
+        node_modules/process-nextick-args/
+        node_modules/readable-stream/
+        node_modules/require-at/
+        node_modules/saslprep/
+        node_modules/sparse-bitfield/
+        node_modules/string_decoder/
+        node_modules/util-deprecate/
