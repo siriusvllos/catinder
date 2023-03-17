@@ -6,7 +6,7 @@ async function like() {
     });
     const data = await response.json();
 
-console.log(data);
+    console.log(data);
 }
 
 async function pass() {
@@ -19,3 +19,21 @@ async function pass() {
     
     console.log(data);
 }
+
+async function getList() {
+    const response = await fetch('/users', {
+        method: "GET",
+    });
+    const data = await response.json();
+    var listaString = JSON.stringfy(data);
+    var listaArray = listaString.split("},{");
+
+    console.log(typeof(listaString));
+    console.log(listaArray);
+
+    return listaArray;
+}
+
+var todosUsuarios = getList();
+var usuarioAtual = 0;
+
