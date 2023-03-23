@@ -6,7 +6,7 @@ async function like() {
     });
     const data = await response.json();
 
-    console.log(data);
+console.log(data);
 }
 
 async function pass() {
@@ -36,4 +36,6 @@ async function getList() {
 
 var todosUsuarios = getList();
 var usuarioAtual = 0;
+
+var imagemAtual = getElementByID("imgAtual");
 
