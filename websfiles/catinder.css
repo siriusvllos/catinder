@@ -73,6 +73,16 @@ body {
 
     background-color:antiquewhite;
 }
+#imgAtual {
+    display: flex;
+    max-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    flex-flow: row nowrap;
+    align-items: center;
+
+  }
 
 #buttons {
     background-color: greenyellow;
@@ -88,3 +98,4 @@ body {
     height: 80px;
     width: 80px;
 }
+
