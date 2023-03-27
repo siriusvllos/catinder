@@ -35,14 +35,16 @@ app.post("/like", async (req, res) => {
   console.log(`Tentei pegar os valores de ${likes}`);
 
   var chamadas = await contarChamadas(likes);
-  res.send("added");
+  res.send(likes);
+
+  // incrementa o mongodb aqui e no pass
 });
 
 app.post("/pass", async (req, res) => {
   console.log(`Tentei pegar os valores de ${passes}`);
 
   var chamadas = await contarChamadas(passes);
-  res.send("added");
+  res.send(passes);
 });
 
 // --- FUNCIOES ISSUE #7 ---
@@ -66,8 +68,7 @@ async function listarUsuarios() {
  async function inserirNovoUsuario(novoUsuario) {
   const client = new MongoClient(uri);
  
-  try {
-    await client.connect();
+  try {    await client.connect();
     const database = client.db("catinder");
     const usuarios = database.collection("usuarios");
  

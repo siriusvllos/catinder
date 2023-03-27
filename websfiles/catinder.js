@@ -22,12 +22,6 @@ function mudarImagemUsuario() {
     tagImagemAtual.src = urlImagemAtual;
 }
 
-/*      tagImagemAtual = document.getElementById("imgAtual");
-
-    urlImagemAtual = todosUsuarios[usuarioAtual].picture;
-
-    tagImagemAtual.src = urlImagemAtual; */
-
 async function like() {
     console.log("Eu gosto desse gatinho");
 
@@ -36,7 +30,7 @@ async function like() {
     });
     const data = await response.json();
 
-    usuarioAtual +=1;
+    globalThis.usuarioAtual +=1;
     mudarImagemUsuario();
 
     console.log(data);
@@ -50,7 +44,7 @@ async function pass() {
     });
     const data = await response.json();
 
-    usuarioAtual +=1;
+    globalThis.usuarioAtual +=1;
     mudarImagemUsuario();
 
     console.log(data);
