@@ -38,6 +38,8 @@ app.post("/like", async (req, res) => {
   res.send(likes);
 
   // incrementa o mongodb aqui e no pass
+
+  db.items.update( { item_id: usuarioAtual },{ $inc: { likes: 1 }});
 });
 
 app.post("/pass", async (req, res) => {
@@ -45,6 +47,8 @@ app.post("/pass", async (req, res) => {
 
   var chamadas = await contarChamadas(passes);
   res.send(passes);
+
+  db.items.update( { item_id: usuarioAtual },{ $inc: { likes: 1 }});
 });
 
 // --- FUNCIOES ISSUE #7 ---
