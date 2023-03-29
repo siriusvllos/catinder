@@ -37,9 +37,12 @@ app.post("/like", async (req, res) => {
   var chamadas = await contarChamadas(likes);
   res.send(likes);
 
-  // incrementa o mongodb aqui e no pass
-
-  db.items.update( { item_id: usuarioAtual },{ $inc: { likes: 1 }});
+  emailUsuarioAtual = req.param("email");
+  db.items.update( {
+    "userId": emailUsuarioAtual,
+    "title": "num de likes do usuario",
+    "body": 0 
+  },{ $inc: { likes: 1 }});
 });
 
 app.post("/pass", async (req, res) => {
@@ -48,7 +51,12 @@ app.post("/pass", async (req, res) => {
   var chamadas = await contarChamadas(passes);
   res.send(passes);
 
-  db.items.update( { item_id: usuarioAtual },{ $inc: { likes: 1 }});
+  emailUsuarioAtual = req.param("email");
+  db.items.update( {
+    "userId": emailUsuarioAtual,
+    "title": "num de paasses do usuario",
+    "body": 0 
+  },{ $inc: { passes: 1 }});
 });
 
 // --- FUNCIOES ISSUE #7 ---
@@ -69,7 +77,7 @@ async function listarUsuarios() {
   }
  };
  
- async function inserirNovoUsuario(novoUsuario) {
+async function inserirNovoUsuario(novoUsuario) {
   const client = new MongoClient(uri);
  
   try {    await client.connect();
@@ -82,7 +90,8 @@ async function listarUsuarios() {
   }
  };
  
- async function deletarUsuario(login) {
+
+async function deletarUsuario(login) {
   const client = new MongoClient(uri);
  
   try {
