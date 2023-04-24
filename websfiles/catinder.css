@@ -6,13 +6,44 @@ body {
 #header {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: start;
+    align-items: baseline;
+    gap: 30px;
 
     background-color:red;
     min-width: 200px;
     min-height: 40px;
     margin: 10px;
+}
+
+#logo_picture {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    flex-basis: 50%;
+
+    max-width: 80px;
+}
+
+#info {
+    display: flex;
+    flex-wrap: wrap;
+
+    place-items: start;
+
+    background-color: blueviolet;
+}
+
+.info_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 30px;
+
+    background-color: aqua;
 }
 
 #main {
@@ -40,19 +71,11 @@ body {
     margin: 10px;
 }
 
-#info {
-    display: flex;
-    justify-content: left;
-}
-
-.info_content {
-    padding: 2px;
-    margin-right: 10px;
-}
-
 #login {
     display: flex;
-    justify-content: right;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 #login_content {
@@ -74,14 +97,9 @@ body {
     background-color:antiquewhite;
 }
 #imgAtual {
-    display: flex;
     max-height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    flex-flow: row nowrap;
-    align-items: center;
-
+    max-width: 400px;
+    overflow: hidden;
   }
 
 #buttons {
