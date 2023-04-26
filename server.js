@@ -20,6 +20,25 @@ function contarChamadas(obj){
   console.log(`O valor de chamadas é = ${obj.chamadas}`)
 }
 
+async function avaliarUsuarios(avaliacao) {
+  const client = new MongoClient(uri);
+
+  try {
+    await client.connect();
+    const database = client.db("catinder");
+    const usuarios = database.collection("usuarios");
+
+    db.usuarios.update( {
+      "userId": emailUsuarioAtual,
+      "title": "num de likes do usuario",
+      "body": 0 
+    },{ $inc: { avaliacao: 1 }});
+
+  } finally {
+    await client.close();
+  }
+ };
+
 // --- URL'SES ---
 
 app.use("/catinder", express.static("websfiles"));
@@ -35,28 +54,24 @@ app.post("/like", async (req, res) => {
   console.log(`Tentei pegar os valores de ${likes}`);
 
   var chamadas = await contarChamadas(likes);
-  res.send(likes);
 
   emailUsuarioAtual = req.param("email");
-  db.items.update( {
-    "userId": emailUsuarioAtual,
-    "title": "num de likes do usuario",
-    "body": 0 
-  },{ $inc: { likes: 1 }});
+  var avaliacaoUsuario = avaliarUsuarios(likes);
+
+  res.send(chamadas, avaliacaoUsuario)
+
+
 });
 
 app.post("/pass", async (req, res) => {
   console.log(`Tentei pegar os valores de ${passes}`);
 
   var chamadas = await contarChamadas(passes);
-  res.send(passes);
 
   emailUsuarioAtual = req.param("email");
-  db.items.update( {
-    "userId": emailUsuarioAtual,
-    "title": "num de paasses do usuario",
-    "body": 0 
-  },{ $inc: { passes: 1 }});
+  var avaliacaoUsuario = avaliarUsuarios(passes);
+
+  res.send(chamadas, avaliacaoUsuario);
 });
 
 // --- FUNCIOES ISSUE #7 ---
