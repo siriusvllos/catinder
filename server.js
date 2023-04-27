@@ -11,14 +11,8 @@ app.use(
 
 const { MongoClient } = require("mongodb");
 const uri = "mongodb://localhost:44805/test";
-const client = new MongoClient(uri);
 
-// ---- FUNCTIONS ----
-
-function contarChamadas(obj){
-  obj["chamadas"] += 1;
-  console.log(`O valor de chamadas é = ${obj.chamadas}`)
-}
+// ---- FUNCTIONS ISSUE#10 ----
 
 async function avaliarUsuarios(avaliacao) {
   const client = new MongoClient(uri);
@@ -28,10 +22,8 @@ async function avaliarUsuarios(avaliacao) {
     const database = client.db("catinder");
     const usuarios = database.collection("usuarios");
 
-    db.usuarios.update( {
-      "userId": emailUsuarioAtual,
-      "title": "num de likes do usuario",
-      "body": 0 
+    usuarios.update( {
+      "email": emailUsuarioAtual,
     },{ $inc: { avaliacao: 1 }});
 
   } finally {
@@ -43,35 +35,20 @@ async function avaliarUsuarios(avaliacao) {
 
 app.use("/catinder", express.static("websfiles"));
 
-var likes = {
-  chamadas: 0,
-};
-var passes = {
-  chamadas: 0,
-};
-
 app.post("/like", async (req, res) => {
-  console.log(`Tentei pegar os valores de ${likes}`);
-
-  var chamadas = await contarChamadas(likes);
 
   emailUsuarioAtual = req.param("email");
-  var avaliacaoUsuario = avaliarUsuarios(likes);
+  avaliarUsuarios("likes");
 
-  res.send(chamadas, avaliacaoUsuario)
-
-
+  res.send({});
 });
 
 app.post("/pass", async (req, res) => {
-  console.log(`Tentei pegar os valores de ${passes}`);
-
-  var chamadas = await contarChamadas(passes);
 
   emailUsuarioAtual = req.param("email");
-  var avaliacaoUsuario = avaliarUsuarios(passes);
+  avaliarUsuarios("passes");
 
-  res.send(chamadas, avaliacaoUsuario);
+  res.send({});
 });
 
 // --- FUNCIOES ISSUE #7 ---
