@@ -37,26 +37,26 @@ body {
   padding: 2.22px 0px 2.23px;
 
   position: absolute;
-  height: 30px;
+  height: 300px;
   left: 28px;
 }
 
-#header-expand > #logo {
-  width: 150px;
-  height: 35.55px;
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
-#frame {
-  position: absolute;
-  width: 150px;
-  height: 35.55px;
-  left: calc(12% - 150px / 2);
-  top: 0px;
-}
+#header-expand > #frame {
+    width: 150px;
+    height: 35.55px;
+  
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  } 
+  
+#logo {
+    position: absolute;
+    width: 150px;
+    height: 35.55px;
+    left: calc(12% - 150px / 2);
+    top: 0px;
+  }
 
 #logo_picture {
   width: 150px;
