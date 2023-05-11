@@ -26,3 +26,8 @@ body {
 
     max-width: 80px;
 }
+
+#criar_uma_conta {
+    background: linear-gradient(78.89deg, #FD267A 0%, #FF6036 100%);
+border-radius: 22px;
+}
