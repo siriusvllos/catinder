@@ -2,6 +2,10 @@ body {
   position: absolute;
   width: 1920px;
   min-height: fit-content;
+  top: -8px;
+  left: -8px;
+
+  background-image: url("bg.jpg");
 }
 
 #main-page {
@@ -12,9 +16,9 @@ body {
   top: 0px;
   bottom: 0px;
   height: fit-content;
+  width: 1920px;
+  background-image: linear-gradient(#000000 10%, transparent);
 
-  background-image: url("bg.jpg");
-  
   display: flex;
   flex-direction: column;
 }
@@ -22,8 +26,6 @@ body {
 /* ------------- HEADER --------------- */
 
 #header {
-  background-image: linear-gradient(#000000 70%, transparent);
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -106,7 +108,7 @@ body {
   margin-top: 50px;
   gap: 10px;
 
-  background-color: #000000;
+  background-image: linear-gradient(45deg, #fd267a 0%, #ff6036 100%);
 }
 
 #user_picture {
@@ -114,7 +116,8 @@ body {
   width: 650px;
   padding: 2px;
 
-  background-color: antiquewhite;
+  border: 2px solid #ffffff;
+  background-color: transparent;
 }
 #imgAtual {
   max-height: 650px;
@@ -123,7 +126,6 @@ body {
 }
 
 #buttons {
-  background-color: greenyellow;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -131,7 +133,6 @@ body {
 }
 
 .button {
-  background-color: aqua;
   margin: 10px;
   height: 80px;
   width: 80px;
@@ -141,11 +142,8 @@ body {
 
 #footer {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
 
-  background-color: royalblue;
   position: absolute;
   width: 1728px;
   height: fit-content;
@@ -154,25 +152,21 @@ body {
 }
 
 #section-BdT {
-  box-sizing: border-box;
-
   position: absolute;
-  width: 1688px;
-  height: 33px;
-  left: 20px;
+  height: 200px;
   top: 415px;
+  left: 115px;
+  right: 115px;
+  background-color: #ffffff;
   border-top: 1px solid #d4d8de;
+  border-left: 20px solid #ffffff;
+  border-right: 20px solid #ffffff;
 }
 
 .footer-txt {
   font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
   font-size: 13px;
   line-height: 138%;
 
-  display: flex;
-  align-items: center;
-
-  color: greenyellow;
+  color: #abacaf;
 }
