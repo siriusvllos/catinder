@@ -1,49 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> catinder </title>
-    <link rel = "stylesheet" href = "catinder.css">
-    <link rel = "stylesheet" href = 'https://fonts.googleapis.com/css?family=Poppins'>
-    <script src="catinder.js"></script>
-    <link rel = "logo" href = "catinder logo.png">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>catinder - todos os gatinhos merecem amor</title>
+  <link rel="stylesheet" href="catinder.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+  <script src="catinder.js"></script>
+  <link rel="logo" href="catinder logo.png" />
+  <link rel="bg" href="bg.jpg" />
 </head>
 
-<body onload = "initPage()">
+<body onload="initPage()">
 
-    <div id = "header">
-        <div id = "logo">
-            <img id = "logo_picture" src="catinder-logo.png">
-        </div>
-        <ul id = "info">
-            <li class = "info_content">Learn</li>
-            <li class = "info_content">Support</li>
-            <li class = "info_content">Safety</li>
-            <li class = "info_content">Donwload</li>
-        </ul>
-        <div id = "login">
-            <div id = "login_content">Log-in</div>
-        </div>
-    <!-- aqui /\ vou colocar um link p pagina de log in -->
+  <div id="main-page">
+    <!--inclui header e o main (like dislike)-->
+
+    <div id="header">
+      <div id="logo">
+        <img id="logo_picture" src="catinder-logo.png" />
+      </div>
+
+      <ul id="info">
+        <li>Purrr-dutos</li>
+        <li>Saiba meoiws</li>
+        <li>Su-purrr-te</li>
+        <li>Segurança</li>
+        <li>Donwload</li>
+      </ul>
     </div>
 
-    <div id = "main">
-
-        <div id = "user_picture">
-            <img id = "imgAtual">
-        </div>
-        <div id = "buttons">
-            <img onclick="like()" class = "button" src="like-button.png" alt="Like">
-            <img onclick="pass()" class = "button" src="dislike-button.png" alt="Pass">
-        </div>
-
+    <div id="login">
+      <div id="login-txt">Log-in</div>
     </div>
 
-    <div id = "footer">
-        <a class = "email">siriusvllos@gmail.com</a>
-    </div>
+  </div>
 
+  <!--comeca o main-->
+
+  <div id="main">
+    <div id="user_picture">
+      <img id="imgAtual" />
+    </div>
+    <div id="buttons">
+      <img onclick="like()" class="button" src="like-button.png" alt="Like" />
+      <img onclick="pass()" class="button" src="dislike-button.png" alt="Pass" />
+    </div>
+  </div>
+  </div>
+
+  <div id="footer">
+    <div id="section-BdT">
+      <div class="footer-txt">
+        <br>
+        Essa e a rede social para amantes de pets de todo o mundo!!! Se voce
+        ama pets esse aqui e definitivamente um site muito razoavel em que
+        voce pode avaliar os pets de outras pessoas e lorem ipsum dolor sit
+        amet, voce sabia? Esse e o texto filler favorito dos designers, mas
+        nao e nem latim. Parabens designers, mas podia ser latim! Lorem
+        consectetur adipiscing elit. Lorem Ipsum is simply dummy text of the
+        printing and typesetting industry, mas ninguem esta dizendo que quem
+        le isso e bobinho. Talvez seja. Entao pare de ler isso! Donec
+        condimentum ligula urna. Aliquam vel neque sit amet turpis efficitur
+        hendrerit. Duis tristique, ipsum vitae aliquam sollicitudin, nulla
+        diam porttitor lectus, id lacinia ipsum erat eu nisi. Nulla vitae
+        tortor nisl. Nam in gravida augue. Etiam maximus massa faucibus,
+        fermentum ex ut, interdum justo. Mauris vitae purus a dolor
+        consequat fringilla id sagittis magna. Vestibulum sit amet magna
+        interdum, luctus ante sit amet, consectetur purus. Integer ultricies
+        fermentum velit id efficitur. Suspendisse imperdiet laoreet metus,
+        porfavor nao leia isso colega! Nao tem nada aqui. Integer tristique
+        finibus vulputate. Fusce nunc velit, vehicula vel tempus ac, iaculis
+        eget tortor. Mauris sollicitudin sem porta maximus eu te disse que
+        nao tem nada aqui! Lorem feugiat.
+      </div>
+      <br />
+      <div class="footer-txt">
+        Para sugestoes, perguntas, ofertas de emprego (rs) ou similares,
+        entre em contato atraves do&nbsp;
+        <a class="email">email</a>
+        ! Agradecemos muito o seu interesse UwU
+      </div>
+    </div>
+  </div>
 </body>
+
+</html>

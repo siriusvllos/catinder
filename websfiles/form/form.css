@@ -1,0 +1,33 @@
+body {
+    background-color: white;
+    font-family: "Poppins";
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: start;
+    align-items: baseline;
+    gap: 30px;
+
+    background-color:red;
+    min-width: 200px;
+    min-height: 40px;
+    margin: 10px;
+}
+
+#logo_picture {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    flex-basis: 50%;
+
+    max-width: 80px;
+}
+
+#criar_uma_conta {
+    background: linear-gradient(78.89deg, #FD267A 0%, #FF6036 100%);
+border-radius: 22px;
+}
